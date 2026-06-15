@@ -1,17 +1,27 @@
 import { Link } from "react-router-dom";
+import { LEVELS } from "../constants/levels";
+import { getLevelIcon } from "../utils/levelIcons";
+import { getLevelClass } from "../utils/levelBadge";
 
-export default function SpotCard({spot}){
+export default function SpotCard({spot, onSelect}){
     return(
-        <Link 
-        to={`/spot/${spot.id}`}
-        style={{textDecoration: "none", color: "inherit"}}
+        <div
+            className="spot-card"
+            onClick={() => onSelect?.(spot)}
         >
             <div className="spot-card">
                 <h3>{spot.name}</h3>
                 <p>Ubicación: {spot.city}</p>
                 <p>Tipo: {spot.type}</p>
-                <p>Nivel: {spot.level}</p>
+                <p className={`badge ${getLevelClass(spot.level)}`}>
+                    Nivel: {LEVELS[spot.level.toUpperCase()].icon} {spot.level}
+                </p>
+                <p>Superficie: {spot.surface}</p>
+                <p>Iluminación: {spot.lighting ? "Sí" : "No"}</p>
+                <p>Cubierta: {spot.covered ? "Sí" : "No"}</p>
             </div>
-        </Link>
+            <button>Ver detalle</button>
+        </div>
+        
     );
 }

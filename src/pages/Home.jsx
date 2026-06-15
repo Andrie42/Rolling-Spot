@@ -44,6 +44,8 @@ export default function Home({ spots }) {
         );
     });
 
+    const [selectedSpot, setSelectedSpot] = useState(null);
+    
     return (
         <div>
 
@@ -62,7 +64,11 @@ export default function Home({ spots }) {
                 levels={levels}
             />
 
-            <SpotMap spots={filteredSpots} />
+            <SpotMap
+                spots={filteredSpots}
+                selectedSpot={selectedSpot}
+                setSelectedSpot={setSelectedSpot}
+            />
 
             {/* Navega al formulario para crear un nuevo spot */}
             <Link to="/new-spot">
@@ -79,6 +85,7 @@ export default function Home({ spots }) {
                 <SpotCard
                     key={spot.id}
                     spot={spot}
+                    onSelect={setSelectedSpot}
                 />
             ))}
 

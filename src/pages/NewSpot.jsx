@@ -11,8 +11,13 @@ export default function NewSpot({
     const [city, setCity] = useState("");
     const [type, setType] = useState("");
     const [level, setLevel] = useState("");
-    const [description, setDescription] =
-        useState("");
+    const [surface, setSurface] = useState("");
+
+    // Booleanos bien inicializados
+    const [lighting, setLighting] = useState(false);
+    const [covered, setCovered] = useState(false);
+
+    const [description, setDescription] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -23,6 +28,9 @@ export default function NewSpot({
             city,
             type,
             level,
+            surface,
+            lighting,
+            covered,
             description,
         };
 
@@ -38,19 +46,15 @@ export default function NewSpot({
             <input
                 placeholder="Nombre"
                 value={name}
-                onChange={(e) =>
-                    setName(e.target.value)
-                }
+                onChange={(e) => setName(e.target.value)}
             />
 
             <br />
 
             <input
-                placeholder="Ubicación"
+                placeholder="Ciudad"
                 value={city}
-                onChange={(e) =>
-                    setCity(e.target.value)
-                }
+                onChange={(e) => setCity(e.target.value)}
             />
 
             <br />
@@ -58,9 +62,7 @@ export default function NewSpot({
             <input
                 placeholder="Tipo"
                 value={type}
-                onChange={(e) =>
-                    setType(e.target.value)
-                }
+                onChange={(e) => setType(e.target.value)}
             />
 
             <br />
@@ -68,10 +70,44 @@ export default function NewSpot({
             <input
                 placeholder="Nivel"
                 value={level}
-                onChange={(e) =>
-                    setLevel(e.target.value)
-                }
+                onChange={(e) => setLevel(e.target.value)}
             />
+
+            <br />
+
+            <input
+                placeholder="Superficie (ej: Liso, Rugoso, Adoquinado, etc.)"
+                value={surface}
+                onChange={(e) => setSurface(e.target.value)}
+            />
+
+            <br />
+
+            {/* CHECKBOX: iluminación */}
+            <label>
+                <input
+                    type="checkbox"
+                    checked={lighting}
+                    onChange={(e) =>
+                        setLighting(e.target.checked)
+                    }
+                />
+                Tiene iluminación
+            </label>
+
+            <br />
+
+            {/* CHECKBOX: cubierto */}
+            <label>
+                <input
+                    type="checkbox"
+                    checked={covered}
+                    onChange={(e) =>
+                        setCovered(e.target.checked)
+                    }
+                />
+                Es cubierto
+            </label>
 
             <br />
 

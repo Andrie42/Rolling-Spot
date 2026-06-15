@@ -1,4 +1,6 @@
 import { useParams } from "react-router-dom";
+import { getLevelIcon } from "../utils/levelIcons";
+import { LEVELS } from "../constants/levels";
 
 export default function SpotDetail({ spots }) {
     const { id } = useParams();
@@ -14,14 +16,13 @@ export default function SpotDetail({ spots }) {
     return (
         <div>
             <h1>{spot.name}</h1>
-
-            <p>ubicación: {spot.city}</p>
-
-            <p>tipo: {spot.type}</p>
-
-            <p>nivel: {spot.level}</p>
-
-            <p>descripción: {spot.description}</p>
+            <p>Ubicación: {spot.city}</p>
+            <p>Tipo: {spot.type}</p>
+            <p>Nivel: {LEVELS[spot.level.toUpperCase()].icon} {spot.level}</p>
+            <p>Superficie: {spot.surface}</p>
+            <p>Iluminación: {spot.lighting ? "Sí" : "No"}</p>
+            <p>Cubierta: {spot.covered ? "Sí" : "No"}</p>
+            <p>Descripción: {spot.description}</p>
         </div>
     );
 }
