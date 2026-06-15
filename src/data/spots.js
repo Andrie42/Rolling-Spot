@@ -5,7 +5,9 @@ export const initialSpots = [
     city: "Madrid",
     type: "Urbano",
     level: "Intermedio",
-    description: "Suelo liso y varios bordillos."
+    description: "Suelo liso y varios bordillos.",
+    lat: 40.4253,
+    lng: -3.6902
     },
     {
         id: 2,
@@ -13,14 +15,18 @@ export const initialSpots = [
         city: "Madrid",
         type: "Plano",
         level: "Principiante",
-        description: "Zona amplia para practicar."
+        description: "Zona amplia para practicar.",
+        lat: 40.3990,
+        lng: -3.7205
     },
     {
         id: 3,
-        name: "Skatepark de Alcobendas",
+        name: "Nepal Skatepark",
         city: "Alcobendas",
         type: "Parque",
         level: "Avanzado",
-        description: "Rampas y bowls."
+        description: "Rampas y Bowl histórico conocido como Nepal.",
+        lat: 40.5523,
+        lng: -3.6455
     }
 ]

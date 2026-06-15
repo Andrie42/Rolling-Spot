@@ -4,27 +4,57 @@ export default function Filters({
     type,
     setType,
     level,
-    setLevel
+    setLevel,
+    cities,
+    types,
+    levels,
 }) {
     return (
         <div className="filters">
-            <select value={city} onChange={(e) => setCity(e.target.value)}>
-                <option value="">Todas</option>
-                <option value="Madrid">Madrid</option>
-                <option value="Alcobendas">Alcobendas</option>
+            <select
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+            >
+                <option value="">Todas las ciudades</option>
+
+                {cities.map((city) => (
+                    <option
+                        key={city}
+                        value={city}
+                    >
+                        {city}
+                    </option>
+                ))}
             </select>
-            <select value={type} onChange={(e) => setType(e.target.value)}>
-                <option value="">Todos</option>
-                <option value="Urbano">Urbano</option>
-                <option value="Parque">Parque</option>
-                <option value="Plano">Plano</option>
-                <option value="Bowl">Bowl</option>
+            <select
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+            >
+                <option value="">Todos los tipos</option>
+
+                {types.map((type) => (
+                    <option
+                        key={type}
+                        value={type}
+                    >
+                        {type}
+                    </option>
+                ))}
             </select>
-            <select value={level} onChange={(e) => setLevel(e.target.value)}>
-                <option value="">Todos</option>
-                <option value="Principiante">Principiante</option>
-                <option value="Intermedio">Intermedio</option>
-                <option value="Avanzado">Avanzado</option>
+            <select
+                value={level}
+                onChange={(e) => setLevel(e.target.value)}
+            >
+                <option value="">Todos los niveles</option>
+
+                {levels.map((level) => (
+                    <option
+                        key={level}
+                        value={level}
+                    >
+                        {level}
+                    </option>
+                ))}
             </select>
         </div>
     )
