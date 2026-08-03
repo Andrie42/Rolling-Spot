@@ -7,7 +7,7 @@ import {
 } from "react-leaflet";
 import { useEffect } from "react";
 
-// Controlador del mapa (aquí SÍ existe "map")
+// Controlador del mapa
 function MapController({ selectedSpot }) {
     const map = useMap();
 
@@ -23,16 +23,18 @@ function MapController({ selectedSpot }) {
     return null;
 }
 
-export default function SpotMap({ spots, selectedSpot }) {
-    
+export default function SpotMap({ spots, selectedSpot, setSelectedSpot, style }) {
+    const defaultStyle = {
+        height: "500px",
+        width: "100%",
+    };
+
     return (
         <MapContainer
             center={[40.4168, -3.7038]}
             zoom={11}
-            style={{
-                height: "500px",
-                width: "100%",
-            }}
+            style={style || defaultStyle}
+            zoomControl={false}
         >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
@@ -43,7 +45,7 @@ export default function SpotMap({ spots, selectedSpot }) {
                     key={spot.id}
                     position={[spot.lat, spot.lng]}
                     eventHandlers={{
-                        click: () => setSelectedSpot(spot)
+                        click: () => setSelectedSpot && setSelectedSpot(spot)
                     }}
                 >
                     <Popup>
