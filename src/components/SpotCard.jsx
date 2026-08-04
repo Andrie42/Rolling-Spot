@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LEVELS } from "../constants/levels";
 
 /**
  * Helper: returns a skate-themed image URL based on spot type.
@@ -82,6 +83,10 @@ export default function SpotCard({ spot, isFavorite, onToggleFavorite }) {
                 {/* Description snippet */}
                 <p className="font-body-md text-secondary line-clamp-2 mb-md flex-grow">
                     {spot.description || "Sin descripción detallada disponible."}
+                </p>
+                {/* Description snippet */}
+                <p className="font-body-md text-secondary line-clamp-2 mb-md flex-grow">
+                    Ideal para: {LEVELS[spot.level.toUpperCase()].icon} {spot.level}
                 </p>
 
                 {/* ── Footer: feature icons + action links ── */}

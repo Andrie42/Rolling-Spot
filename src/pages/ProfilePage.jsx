@@ -39,7 +39,7 @@ export default function ProfilePage() {
     return (
         <div className="bg-background min-h-screen pb-24 md:pb-0 pt-16 md:pt-20">
             {/* Shared layout components */}
-            <MobileHeader title="ROLLERHUB" showMenu showSearch />
+            <MobileHeader title="Roll&Roll"/>
             <Navbar activeTab="profile" />
             <BottomNavbar activeTab="profile" />
 

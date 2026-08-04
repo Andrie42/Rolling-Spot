@@ -80,7 +80,7 @@ export default function MeetupsPage() {
     return (
         <div className="font-body-md text-on-surface antialiased pt-16 pb-24 md:pt-20 md:pb-0 min-h-screen flex flex-col bg-[#F8FAFC]">
             {/* Shared layout components */}
-            <MobileHeader title="ROLLERHUB" showMenu showSearch />
+            <MobileHeader title="Roll&Roll"/>
             <Navbar activeTab="meetups" />
             <BottomNavbar activeTab="meetups" />
 

@@ -52,14 +52,7 @@ export default function SpotDetail({ spots }) {
 
     return (
         <div className="bg-surface text-on-surface antialiased pb-24 md:pb-8 min-h-screen">
-            {/* Sub-page mobile header: shows back + share buttons */}
-            <MobileHeader
-                title="DETALLES DEL SPOT"
-                showBack
-                onBack={() => navigate(-1)}
-                showShare
-                onShare={handleShare}
-            />
+            <MobileHeader title="Roll&Roll"/>
 
             <main className="pt-16 max-w-7xl mx-auto md:px-margin-desktop px-0 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-lg md:pt-24">
                 {/* Hero Section & Left Column on Desktop */}

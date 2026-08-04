@@ -19,7 +19,7 @@ const NAV_TABS = [
  */
 export default function BottomNavbar({ activeTab }) {
     return (
-        <nav className="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-[0_-4px_12px_rgba(0,0,0,0.15)] flex justify-around items-center h-20 px-2 pb-safe md:hidden">
+        <nav className="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface dark:bg-inverse-surface border-t border-outline-variant dark:border-outline shadow-[0_-4px_12px_rgba(0,0,0,0.15)] flex justify-around items-center h-16 px-2 pb-safe md:hidden">
             {NAV_TABS.map(tab => {
                 const isActive = tab.id === activeTab;
                 return (

@@ -10,5 +10,9 @@ export const LEVELS = {
     AVANZADO: {
         label: "Avanzado",
         icon: "🦄"
+    },
+    TODOS: {
+        label: "Todos",
+        icon: "🌈"
     }
 };
