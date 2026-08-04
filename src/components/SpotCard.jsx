@@ -38,7 +38,7 @@ export default function SpotCard({ spot, isFavorite, onToggleFavorite }) {
                 <img
                     className="w-full h-full object-cover"
                     alt={spot.name}
-                    src={getSpotImage(spot.type)}
+                    src={spot.image || getSpotImage(spot.type)}
                     loading="lazy"
                 />
 

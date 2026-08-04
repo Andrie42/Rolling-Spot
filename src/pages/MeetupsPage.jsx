@@ -213,8 +213,6 @@ export default function MeetupsPage() {
                     </div>
                 )}
             </main>
-
-            {/* Bottom nav rendered by BottomNavbar component above */}
         </div>
     );
 }

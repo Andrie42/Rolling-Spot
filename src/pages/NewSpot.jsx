@@ -12,6 +12,7 @@ export default function NewSpot({
     const [type, setType] = useState("");
     const [level, setLevel] = useState("");
     const [surface, setSurface] = useState("");
+    const [image, setImage] = useState(null);
 
     // Booleanos bien inicializados
     const [lighting, setLighting] = useState(false);
@@ -32,11 +33,20 @@ export default function NewSpot({
             lighting,
             covered,
             description,
+            image
         };
 
         setSpots([...spots, newSpot]);
 
         navigate("/");
+    }
+
+    function handleImageChange(e) {
+        const file = e.target.files[0];
+
+        if (file) {
+            setImage(URL.createObjectURL(file));
+        }
     }
 
     return (
@@ -47,6 +57,15 @@ export default function NewSpot({
                 placeholder="Nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+            />
+
+            <br />
+
+            <input
+                type="file"
+                accept="image/*"
+                value={image}
+                onChange={handleImageChange}
             />
 
             <br />
