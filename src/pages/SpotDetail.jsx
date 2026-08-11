@@ -54,6 +54,7 @@ export default function SpotDetail({ spots }) {
                 title="Rolling Spot"
                 onBack={() => navigate(-1)}
             />
+            <Navbar activeTab="/spot/:id" />
 
             <main className="pt-16 max-w-7xl mx-auto md:px-margin-desktop px-0 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-lg md:pt-24">
                 {/* Hero Section & Left Column on Desktop */}

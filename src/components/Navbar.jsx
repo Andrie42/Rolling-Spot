@@ -1,17 +1,12 @@
 import { Link } from "react-router-dom";
 
-/**
- * Desktop top navigation bar (hidden on mobile).
- * Shows the ROLLERHUB logo and a set of nav links.
- * The active link is highlighted with primary color + bold weight.
- *
- * @param {string} activeTab - One of: "map" | "spots" | "meetups" | "profile"
- */
+
 export default function Navbar({ activeTab }) {
     const links = [
         { id: "map",     label: "Mapa",     icon: "map",         path: "/map" },
         { id: "spots",   label: "Sitios",   icon: "location_on", path: "/" },
         { id: "meetups", label: "Quedadas", icon: "groups",      path: "/meetups" },
+        { id: "levels", label: "Guia Niveles", icon: "skateboarding", path: "/levels" },
         { id: "profile", label: "Perfil",   icon: "person",      path: "/profile" },
     ];
 

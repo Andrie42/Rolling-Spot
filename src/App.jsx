@@ -7,6 +7,7 @@ import MapPage from "./pages/MapPage";
 import MeetupsPage from "./pages/MeetupsPage";
 import ProfilePage from "./pages/ProfilePage";
 import { initialSpots } from "./data/spots";
+import LevelsPage from "./pages/LevelsPage";
 
 export default function App() {
   const [spots, setSpots] = useState(initialSpots);
@@ -31,6 +32,11 @@ export default function App() {
       <Route
         path="/profile"
         element={<ProfilePage />}
+      />
+
+      <Route
+        path="/levels"
+        element={<LevelsPage />}
       />
 
       <Route
