@@ -27,7 +27,7 @@ export default function MapPage({ spots }) {
     return (
         <div className="bg-background text-on-background h-screen w-screen overflow-hidden flex flex-col relative">
             {/* Mobile top bar (reusable) */}
-            <MobileHeader title="Roll&Roll" showMenu showSearch />
+            <MobileHeader title="Rolling Spot" showMenu showSearch />
 
             {/* ── Full-screen map canvas ── */}
             <main className="flex-grow relative z-0 w-full h-full mt-16 mb-20 md:mt-0 md:mb-0">

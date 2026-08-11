@@ -52,7 +52,7 @@ export default function SpotDetail({ spots }) {
 
     return (
         <div className="bg-surface text-on-surface antialiased pb-24 md:pb-8 min-h-screen">
-            <MobileHeader title="Roll&Roll"/>
+            <MobileHeader title="Rolling Spot"/>
 
             <main className="pt-16 max-w-7xl mx-auto md:px-margin-desktop px-0 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-lg md:pt-24">
                 {/* Hero Section & Left Column on Desktop */}
@@ -188,7 +188,7 @@ export default function SpotDetail({ spots }) {
                         <div className="flex flex-col gap-3">
                             <button
                                 onClick={handleGetDirections}
-                                className="w-full h-14 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-xl shadow-[0_4px_12px_rgba(0,110,47,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                                className="w-full h-14 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-xl shadow-[0_4px_12px_rgba(1,111,185,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                             >
                                 <span className="material-symbols-outlined">directions</span>
                                 Cómo llegar

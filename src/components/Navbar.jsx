@@ -19,7 +19,7 @@ export default function Navbar({ activeTab }) {
         <div className="hidden md:flex fixed top-0 w-full z-50 bg-surface shadow-[0_4px_12px_rgba(0,0,0,0.15)] px-margin-desktop h-20 items-center justify-between">
             {/* Brand logo */}
             <div className="font-display text-headline-lg font-black text-primary tracking-tighter">
-                ROLLERHUB
+                Rolling Spot
             </div>
 
             {/* Navigation links */}

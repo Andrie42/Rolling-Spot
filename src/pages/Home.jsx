@@ -39,7 +39,7 @@ export default function Home({ spots }) {
     return (
         <div className="bg-surface text-on-surface font-body-md min-h-screen pt-16 pb-24 md:pt-20 md:pb-0">
             {/* ── Shared layout components ── */}
-            <MobileHeader title="Roll&Roll" showMenu showSearch />
+            <MobileHeader title="Rolling Spot" showMenu showSearch />
             <Navbar activeTab="spots" />
             <BottomNavbar activeTab="spots" />
 

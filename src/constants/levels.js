@@ -1,14 +1,22 @@
 export const LEVELS = {
-    PRINCIPIANTE: {
-        label: "Principiante",
+    CARACOL: {
+        label: "Caracol",
         icon: "🐌"
     },
-    INTERMEDIO: {
-        label: "Intermedio",
+    ORUGA: {
+        label: "Oruga",
+        icon: "🐛"
+    },
+    MARIPOSA: {
+        label: "Mariposa",
         icon: "🦋"
     },
-    AVANZADO: {
-        label: "Avanzado",
+    cOHETE: {
+        label: "Cohete",
+        icon: "🚀"
+    },
+    UNICORNIO: {
+        label: "Unicornio",
         icon: "🦄"
     },
     TODOS: {

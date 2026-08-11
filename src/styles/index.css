@@ -1,43 +1,50 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+/* ============================================
+   Rolling Spot — Unified Stylesheet
+   ============================================ */
+
+/* --- Scrollbar Hiding Utilities --- */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar,
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-h1 {
-    text-align: center;
+/* --- Glassmorphism Panels --- */
+.glass-card,
+.glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-.spot-card {
-    background: white;
-    padding: 16px;
-    margin: 12px auto;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+/* --- Filter Row --- */
+.filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+}
+.filters select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #B9C7D4;
+    background: #fff;
+    font-size: 14px;
+    color: #131b2e;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.filters select:focus {
+    outline: none;
+    border-color: #016FB9;
+    box-shadow: 0 0 0 3px rgba(1, 111, 185, 0.15);
 }
 
-/*badges para niveles*/
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: bold;
-}
-.badge-principiante {
-    background: #e6f7e6;
-    color: #2e7d32;
-}
-
-.badge-intermedio {
-    background: #fff8e1;
-    color: #f9a825;
-}
-
-.badge-avanzado {
-    background: #ffebee;
-    color: #c62828;
+/* --- Material Symbols Filled Variant --- */
+.filled {
+    font-variation-settings: 'FILL' 1;
 }
