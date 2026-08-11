@@ -63,7 +63,7 @@ export default function Home({ spots }) {
                     </div>
 
                     {/* Dynamically generated category filter chips */}
-                    <div className="flex gap-sm overflow-x-auto pb-2 mt-md no-scrollbar justify-start md:justify-center">
+                    <div className="flex flex-wrap gap-sm mt-md justify-center">
                         {spotTypes.map(type => (
                             <button
                                 key={type}

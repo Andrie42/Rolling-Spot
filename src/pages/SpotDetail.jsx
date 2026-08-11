@@ -2,12 +2,10 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import SpotMap from "../components/SpotMap";
 import MobileHeader from "../components/MobileHeader";
+import Navbar from "../components/Navbar";
+import BottomNavbar from "../components/BottomNavbar";
 
-/**
- * SpotDetail component displays the full details of a specific skating spot.
- * It dynamically maps features from the spot object to a modern Tailwind-styled
- * layout matching the original spot.html mockup.
- */
+
 export default function SpotDetail({ spots }) {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -52,7 +50,10 @@ export default function SpotDetail({ spots }) {
 
     return (
         <div className="bg-surface text-on-surface antialiased pb-24 md:pb-8 min-h-screen">
-            <MobileHeader title="Rolling Spot"/>
+            <MobileHeader
+                title="Rolling Spot"
+                onBack={() => navigate(-1)}
+            />
 
             <main className="pt-16 max-w-7xl mx-auto md:px-margin-desktop px-0 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-lg md:pt-24">
                 {/* Hero Section & Left Column on Desktop */}
@@ -61,9 +62,10 @@ export default function SpotDetail({ spots }) {
                     <div className="relative w-full aspect-[4/3] md:aspect-video md:rounded-xl overflow-hidden group bg-surface-container-low">
                         {/* We use a high quality placeholder for skating that matches our spot name */}
                         <img
+                            className="w-full h-full object-cover"
                             alt={spot.name}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            src="https://images.unsplash.com/photo-1564982722483-e290f52921a0?auto=format&fit=crop&q=80&w=1200"
+                            src={spot.image || getSpotImage(spot.type)}
+                            loading="lazy"
                         />
                         {/* Rating Badge */}
                         <div className="absolute top-4 right-4 flex gap-2">
@@ -195,14 +197,13 @@ export default function SpotDetail({ spots }) {
                             </button>
                             <button
                                 onClick={() => setIsFavorite(!isFavorite)}
-                                className={`w-full h-14 border rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 font-label-md text-label-md ${
-                                    isFavorite
+                                className={`w-full h-14 border rounded-xl active:scale-[0.98] transition-all flex items-center justify-center gap-2 font-label-md text-label-md ${isFavorite
                                         ? "bg-red-50 border-red-200 text-red-600 hover:bg-red-100"
                                         : "bg-surface-container-lowest border-outline-variant hover:bg-surface-container-low text-on-surface"
-                                }`}
+                                    }`}
                             >
                                 <span className={`material-symbols-outlined ${isFavorite ? "text-red-600" : "text-outline"}`}
-                                      style={{ fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
+                                    style={{ fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0" }}>
                                     favorite
                                 </span>
                                 {isFavorite ? "En Favoritos" : "Añadir a favoritos"}
